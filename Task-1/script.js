@@ -8,3 +8,20 @@ pamatyti jo pateikto svorio kovertavimą į:
 Pastaba: atvaizdavimas turi būti matomas pateikus formą ir pateikiamas
 <div id="output"></div> viduje, bei turi turėti bent minimalų stilių;
 ------------------------------------------------------------------- */
+
+const form = document.querySelector("form");
+form.addEventListener("submit", weightConverter);
+
+function weightConverter(event) {
+    event.preventDefault();
+
+    const input = document.querySelector("#search");
+    const inputValue = Number(input.value);
+
+    const puond = inputValue * 2.2046;
+    const grams = inputValue / 0.001;
+    const ounce = inputValue * 35.274;
+
+    const output = document.querySelector("#output");
+    output.innerText = `Converted to puonds: ${puond} (lb). Converted to grams: ${grams} (g). Convertered to ounce: ${ounce} (oz).`
+};
