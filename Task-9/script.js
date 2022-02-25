@@ -12,13 +12,12 @@ class newMovie {
         this.title = title;
         this.director = director;
         this.budget = budget;
+        this.wasExpensive = function wasExpensive(budget){
+            if(budget>100000000){
+            console.log("true")   
+            } else {console.log("false")};   
+        };        
     };
 };
 const newItem = new newMovie("Ananasas", "Grybas", 252245);
-console.log(newItem, wasExpensive());
-
-function wasExpensive(budget){
-    if(budget>100000000){
-    console.log("true")   
-    } else {console.log("false")};   
-};
+console.log(newItem);
