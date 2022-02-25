@@ -20,16 +20,12 @@ const users = [
   { id: '9', name: 'Daniel Cane', age: 51 },
 ];
 
-// const getAgeValues = users.values("age");
-// for(const value of getAgeValues){
-//  const newArray = new Array(value.age);
-//  console.log(newArray);
-// };
-
-const initialValue = 0;
-const getUserAverageAge = users.reduce ((previousValue, currentValue) => previousValue + currentValue,
-initialValue
-);
-
+const getUserTotalAge = users.reduce ((prev, current) => prev + current.age, 0);
+const getUserAverageAge = getUserTotalAge/users.length;
 console.log(getUserAverageAge); 
+
+const getUsersNames = users.filter(
+  (user) => user.name
+);
+console.log(getUsersNames);
 
